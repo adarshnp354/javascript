@@ -19,13 +19,10 @@
             margin-left: auto;
             margin-right: auto;
         }
-        .modal-header{
-            background-color: aqua;
-        }
     </style>
 </head>
 <body>
-    <form>
+    <form onclick="return required()">
     <table>
     <div class="container">
     <tr><td>
@@ -34,44 +31,63 @@
     </td>
         <tr><td><div>
             <i class="fa fa-user" aria-hidden="true"></i>
-        <input type="text" placeholder="Username">
+        <input type="text" id="usr" placeholder="Username">
+        <span id="sp1" style="color: brown;"></span><br>
         </div></td></tr>
         <tr><td><div>
             <i class="fa fa-paper-plane" aria-hidden="true"></i>
-        <input type="email" placeholder="Email Address">
+        <input type="email" id="mail" placeholder="Email Address">
+        <span id="sp2" style="color: brown;"></span><br>
         </div></td></tr>
         <tr><td><div>
             <i class="fa fa-lock" aria-hidden="true"></i>
-        <input type="password" placeholder="Password">
+        <input type="password" id="pass" placeholder="Password">
+        <span id="sp3"  style="color: brown;"></span><br>
         </div></td></tr>
         <tr><td><div>
             <i class="fa fa-lock" aria-hidden="true"></i>
-        <input type="password" placeholder="Confirm password">
+        <input type="password" id="passw" placeholder="Confirm password">
+        <span id="sp4" style="color: brown;"></span><br>
         </div></td></tr>
         <tr><td><div>
         <input type="checkbox"> I accept <a href="#">Terms of Use</a>&nbsp;&&nbsp;<a href="#">Privacy Policy</a>
         </div></td></tr>
-        <tr><td><div>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">SIGN UP</button>
-
-        <div class="modal fade" id="myModal" role="dialog">
-          <div class="modal-dialog">
-          
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3 class="modal-header"><br><i class="fa fa-check-circle-o" aria-hidden="true"></i></h3>
-              </div>
-              <div class="modal-body">
-                  <h2>GREAT!</h2>
-                <p>Your account has been created sucessfully</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <tr><td>
+            <div>
+                <input type="button" value="Sign Up" >
               </div>
         </div></td></tr>
     </table>
     </form>
     <p><center>Already have an account?<a href="/Users/acer/Desktop/Adarsh_Task/html_basic_task/login.html">Login</a></center></p>
+    <script>
+    function required()
+     {
+     var a=document.getElementById('usr').value.trim();
+     if(a=="")
+     {
+     document.getElementById('sp1').innerHTML="ENTER NAME";
+     return false;
+     }
+     var b=document.getElementById("mail").value.trim();
+     if(b=="")
+     {
+         document.getElementById("sp2").innerHTML="ENTER EMAIL";
+         return false;
+     }
+     var c=document.getElementById('pass').value.trim();
+     if(c=="")
+     {
+         document.getElementById("sp3").innerHTML="ENTER PASSWORD";
+         return false;
+     }
+     var d=document.getElementById("passw").value.trim();
+     if(d=="")
+     {
+         document.getElementById("sp4").innerHTML="ENTER PASSWORD AGAIN";
+         return false;
+     }
+     }
+ </script>
 </body>
 </html>
