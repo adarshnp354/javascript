@@ -53,7 +53,7 @@
             <input type="checkbox"> I accept <a href="#">Terms of Use</a>&nbsp;&&nbsp;<a href="#">Privacy Policy</a>
         </div></td></tr>
         <tr><td><div>
-                <input type="button" value="Sign Up" onclick="ValidateEmail(document.form1.mail)">
+                <input type="button" value="Sign Up" onclick="ValidateEmail(document.form1.text1)">
         </div></td></tr>
     </table>
     </form>
@@ -88,7 +88,7 @@
         }
         function ValidateEmail(inputText)
         {
-            var mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+            var mailformat =/^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
             if(inputText.value.match(mailformat))
             {
                 alert("You have entered a valid email address!"); 
