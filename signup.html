@@ -55,7 +55,6 @@
         <tr><td>
             <div>
                 <input type="button" value="Sign Up" >
-                
               </div>
         </div></td></tr>
     </table>
@@ -88,23 +87,7 @@
          document.getElementById("sp4").innerHTML="ENTER PASSWORD AGAIN";
          return false;
      }
-    }
-    function ValidateEmail()
-    {
-    var mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
-    if(inputText.value.match(mailformat))
-    {
-    alert("You have entered a valid email address!");   
-    document.form.mail.focus();
-    return true;
-    }
-    else
-    {
-    alert("You have entered an invalid email address!");    
-    document.form.mail.focus();
-    return false;
-    }
-    }
+     }
  </script>
 </body>
 </html>
