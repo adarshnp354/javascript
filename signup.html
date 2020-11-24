@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-    <form onclick="return required()">
+    <form name="form" onclick="required()">
     <table>
         <div class="container">
         <tr><td>
@@ -36,7 +36,7 @@
         </div></td></tr>
         <tr><td><div>
             <i class="fa fa-paper-plane" aria-hidden="true"></i>
-            <input type="email" id="mail" placeholder="Email Address">
+            <input type="email" id="mail" name="text" placeholder="Email Address">
             <span id="sp2" style="color: brown;"></span><br>
         </div></td></tr>
         <tr><td><div>
@@ -53,7 +53,7 @@
             <input type="checkbox"> I accept <a href="#">Terms of Use</a>&nbsp;&&nbsp;<a href="#">Privacy Policy</a>
         </div></td></tr>
         <tr><td><div>
-                <input type="button" value="Sign Up" >
+                <input type="button" value="Sign Up" onclick="ValidateEmail(document.form.mail)">
         </div></td></tr>
     </table>
     </form>
@@ -85,6 +85,15 @@
             document.getElementById("sp4").innerHTML="ENTER PASSWORD AGAIN";
             return false;
         }
+        }
+        function ValidateEmail(mail) 
+        {
+        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value))
+        {
+            return (true)
+        }
+            alert("You have entered an invalid email address!")
+            return (false)
         }
     </script>
 </body>
